@@ -1,0 +1,103 @@
+/* ===== Siluzer Studio — Dark Elegant ===== */
+:root{
+  --bg:#000;
+  --surface:#0b0b0b;
+  --elev:#111;
+  --muted:#9ca3af;
+  --text:#fafafa;
+  --brand1:#a855f7; /* violeta */
+  --brand2:#f43f5e; /* magenta */
+  --accent:#facc15; /* dourado */
+  --border: rgba(255,255,255,.08);
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+}
+
+/* Containers */
+.container{max-width:1120px; margin:0 auto; padding:0 20px}
+
+/* Nav */
+.nav{position:sticky; top:0; z-index:50; backdrop-filter: blur(8px); background: rgba(0,0,0,.6); border-bottom:1px solid var(--border)}
+.nav__wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
+.brand__logo{width:40px;height:40px;border-radius:12px;background: linear-gradient(135deg, rgba(168,85,247,.25), rgba(244,63,94,.18)); display:grid;place-items:center;font-weight:900}
+.brand__text span{display:block;font-size:12px;color:var(--muted);margin-top:-2px}
+.menu{display:flex;gap:18px; align-items:center}
+.menu a{color:#ddd; text-decoration:none; font-size:14px; padding:8px 10px; border-radius:12px}
+.menu a:hover{color:#fff; background: rgba(255,255,255,.06)}
+.btn{background: linear-gradient(135deg, var(--brand1), var(--brand2)); color:#fff; padding:12px 18px; border:none; border-radius:16px; text-decoration:none; display:inline-flex; align-items:center; gap:10px; box-shadow: var(--shadow); cursor:pointer}
+.btn--ghost{background: transparent; border:1px solid var(--border)}
+
+/* Mobile menu */
+.nav__toggle{display:none; width:38px;height:32px;background:transparent;border:0;gap:4px;flex-direction:column;justify-content:center}
+.nav__toggle span{height:2px;background:#fff;display:block;border-radius:2px}
+
+/* Hero */
+.hero{position:relative; padding:120px 0 70px; border-bottom:1px solid var(--border)}
+.bg-glow{position:absolute; inset:0; background: radial-gradient(60% 40% at 50% -10%, rgba(168,85,247,.28), transparent), radial-gradient(40% 40% at 90% 0%, rgba(244,63,94,.22), transparent)}
+.hero__content h1{font-size:56px; line-height:1.05; margin:0 0 8px}
+.hero__content .sub{color:var(--muted); font-size:18px}
+.actions{display:flex; gap:10px; margin:24px 0 28px}
+.cards{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px}
+.card{background:var(--surface); border:1px solid var(--border); border-radius: var(--radius); padding:16px; box-shadow: var(--shadow)}
+.card h3{margin:0 0 10px}
+.thumb{height:160px;border-radius:14px;border:1px dashed var(--border); display:grid; place-items:center; color:var(--muted); background: linear-gradient(135deg, #121212, #0a0a0a)}
+.swatches{display:grid; grid-template-columns: repeat(6, 1fr); gap:8px}
+.swatches span{aspect-ratio:1/1; border-radius:12px; background: var(--c); border:1px solid var(--border)}
+.highlights{margin:0; padding-left:16px; color:#d1d5db}
+.highlights li{margin:6px 0}
+
+/* Sections */
+.section{padding:80px 0; border-bottom:1px solid var(--border)}
+.section h2{font-size:28px; margin:0 0 16px}
+.grid-2{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px}
+.projects .card{position:relative}
+.projects .tag{position:absolute; top:12px; right:12px; background: rgba(255,255,255,.08); border:1px solid var(--border); padding:4px 8px; border-radius:999px; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#d1d5db}
+.socials{display:flex; gap:14px; flex-wrap:wrap}
+.socials a{color:#d1d5db; text-decoration:none; border:1px solid var(--border); padding:8px 10px; border-radius:12px}
+.socials a:hover{background: rgba(255,255,255,.06)}
+
+/* Gallery */
+.gallery{display:grid; grid-template-columns: repeat(2,1fr); gap:10px}
+.tile{height:120px; border-radius:14px; background: linear-gradient(135deg, #1b1b1b, #0d0d0d); border:1px solid var(--border); display:grid; place-items:center; color:#a1a1aa; font-size:12px}
+
+/* Team */
+.team{display:grid; grid-template-columns: repeat(3,1fr); gap:18px}
+.member .avatar{height:150px; border-radius:14px; background: linear-gradient(135deg, #1b1b1b, #0b0b0b); border:1px solid var(--border); display:grid; place-items:center; color:#a1a1aa; font-size:12px}
+.role{color:#d1d5db; margin:.25rem 0 -.25rem}
+.bio{color:#9ca3af}
+
+/* Form */
+.form{display:grid; gap:12px}
+.form input, .form textarea{background:#0a0a0a; color:#fff; border:1px solid var(--border); border-radius:12px; padding:12px}
+.form input:focus, .form textarea:focus{outline:2px solid rgba(168,85,247,.35)}
+
+/* Footer */
+.footer{padding:26px 0}
+.footer__wrap{display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--border); padding-top:16px}
+.footer .muted, .muted{color:#9ca3af}
+.link{color:#fff}
+
+/* Responsive */
+@media (max-width: 900px){
+  .grid-2{grid-template-columns:1fr; gap:20px}
+  .cards{grid-template-columns:1fr}
+  .team{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 700px){
+  .hero__content h1{font-size:40px}
+  .gallery{grid-template-columns:1fr 1fr}
+  .team{grid-template-columns:1fr}
+  .menu{display:none; position:absolute; top:58px; right:16px; background:#0a0a0a; padding:10px; border-radius:12px; border:1px solid var(--border); width:max-content}
+  .menu a{display:block}
+  .nav__toggle{display:flex}
+}
